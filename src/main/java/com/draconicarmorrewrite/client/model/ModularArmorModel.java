@@ -24,7 +24,7 @@ implements EquippedItemModel {
     private final boolean isOnArmor;
 
     public ModularArmorModel(TechLevel techLevel, boolean isOnArmor, EquipmentSlot slot) {
-        super(createDummyRoot());
+        super(createStandardRoot());
         this.techLevel = techLevel;
         this.isOnArmor = isOnArmor;
         this.slot = slot;
@@ -59,16 +59,8 @@ implements EquippedItemModel {
         }
     }
 
-    private static ModelPart createDummyRoot() {
-        HashMap<String, ModelPart> children = new HashMap<>();
-        ModelPart dummy = new ModelPart(Collections.emptyList(), Collections.emptyMap());
-        children.put("head", dummy);
-        children.put("hat", dummy);
-        children.put("body", dummy);
-        children.put("right_arm", dummy);
-        children.put("left_arm", dummy);
-        children.put("right_leg", dummy);
-        children.put("left_leg", dummy);
-        return new ModelPart(Collections.emptyList(), children);
+    private static ModelPart createStandardRoot() {
+        net.minecraft.client.model.geom.builders.MeshDefinition mesh = HumanoidModel.createMesh(net.minecraft.client.model.geom.builders.CubeDeformation.NONE, 0.0F);
+        return net.minecraft.client.model.geom.builders.LayerDefinition.create(mesh, 64, 32).bakeRoot();
     }
 }
