@@ -78,7 +78,7 @@ public abstract class ShieldControlEntityMixin extends ModuleEntity<com.brandon3
                             toExtractTotal -= toExtract;
                         }
                     }
-                    return -extracted;
+                    return extracted;
                 } else if (toExtractTotal < 0) {
                     return storage.modifyEnergyStored(amount);
                 }
