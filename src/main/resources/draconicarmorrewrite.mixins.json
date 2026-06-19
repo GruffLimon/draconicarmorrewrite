@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.draconicarmorrewrite.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "draconicarmorrewrite.mixins.refmap.json",
+  "mixins": [
+    "ModularArmorModelMixin",
+    "ModularChestpieceModelMixin",
+    "HumanoidArmorLayerMixin",
+    "ModularArmorNameFixMixin",
+    "ItemNameMixin",
+    "ShieldControlEntityMixin",
+    "ModularArmorEventHandlerMixin",
+    "ShieldHudElementMixin",
+    "OriginalModularArmorBlacklistMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

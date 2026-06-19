@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="draconicarmorrewrite"
+version="1.0.0"
+displayName="Draconic Armor Fix"
+authors="AI Assistant"
+description='''
+Fixes 3D armor rendering bugs in Draconic Evolution and allows toggling classic 1.12.2 armor models.
+'''
+
+[[dependencies.draconicarmorrewrite]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.draconicarmorrewrite]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.draconicarmorrewrite]]
+    modId="draconicevolution"
+    mandatory=true
+    versionRange="[3.1.0,)"
+    ordering="AFTER"
+    side="BOTH"

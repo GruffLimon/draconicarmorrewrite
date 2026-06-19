@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Specification-Title: draconicarmorfix
+Specification-Vendor: author
+Specification-Version: 1
+Implementation-Title: draconicarmorfix
+Implementation-Version: 1.0.0
+Implementation-Vendor: author
+Implementation-Timestamp: 2026-06-12T01:12:41+0300
+MixinConfigs: draconicarmorfix.mixins.json
+
