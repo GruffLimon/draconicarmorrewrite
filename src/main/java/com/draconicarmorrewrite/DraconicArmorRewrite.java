@@ -18,6 +18,7 @@ public class DraconicArmorRewrite {
     public static int currentOverlay;
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+    public static final DeferredRegister<net.minecraft.world.item.CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(net.minecraft.core.registries.Registries.CREATIVE_MODE_TAB, MODID);
 
     // Helmets
     public static final RegistryObject<ModularHelmet> HELMET_WYVERN = ITEMS.register("wyvern_helmet",
@@ -51,9 +52,31 @@ public class DraconicArmorRewrite {
     public static final RegistryObject<ModularBoots> BOOTS_CHAOTIC = ITEMS.register("chaotic_boots",
             () -> new ModularBoots(com.brandon3055.draconicevolution.init.DEContent.CHAOTIC_TOOLS));
 
+    // Tab
+    public static final RegistryObject<net.minecraft.world.item.CreativeModeTab> DRACONIC_ARMOR_TAB = CREATIVE_MODE_TABS.register("draconic_armor_tab",
+            () -> net.minecraft.world.item.CreativeModeTab.builder()
+                    .title(net.minecraft.network.chat.Component.translatable("itemGroup.draconic_armor_tab"))
+                    .icon(() -> new net.minecraft.world.item.ItemStack(HELMET_CHAOTIC.get()))
+                    .displayItems((params, output) -> {
+                        output.accept(HELMET_WYVERN.get());
+                        output.accept(CHESTPIECE_WYVERN.get());
+                        output.accept(LEGGINGS_WYVERN.get());
+                        output.accept(BOOTS_WYVERN.get());
+                        output.accept(HELMET_DRACONIC.get());
+                        output.accept(CHESTPIECE_DRACONIC.get());
+                        output.accept(LEGGINGS_DRACONIC.get());
+                        output.accept(BOOTS_DRACONIC.get());
+                        output.accept(HELMET_CHAOTIC.get());
+                        output.accept(CHESTPIECE_CHAOTIC.get());
+                        output.accept(LEGGINGS_CHAOTIC.get());
+                        output.accept(BOOTS_CHAOTIC.get());
+                    })
+                    .build());
+
     public DraconicArmorRewrite() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ITEMS.register(modEventBus);
+        CREATIVE_MODE_TABS.register(modEventBus);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, DraconicArmorRewriteConfig.CLIENT_SPEC);
         if (net.minecraftforge.fml.loading.FMLEnvironment.dist == net.minecraftforge.api.distmarker.Dist.CLIENT) {

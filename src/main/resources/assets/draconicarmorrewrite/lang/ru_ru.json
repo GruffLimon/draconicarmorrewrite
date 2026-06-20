@@ -10,5 +10,6 @@
   "item.draconicarmorrewrite.chaotic_helmet": "Шлем Хаоса",
   "item.draconicarmorrewrite.chaotic_chestplate": "Нагрудник Хаоса",
   "item.draconicarmorrewrite.chaotic_leggings": "Поножи Хаоса",
-  "item.draconicarmorrewrite.chaotic_boots": "Ботинки Хаоса"
+  "item.draconicarmorrewrite.chaotic_boots": "Ботинки Хаоса",
+  "itemGroup.draconic_armor_tab": "Классическая Броня Дракона"
 }

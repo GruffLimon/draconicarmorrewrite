@@ -10,5 +10,6 @@
   "item.draconicarmorrewrite.chaotic_helmet": "Chaotic Helmet",
   "item.draconicarmorrewrite.chaotic_chestplate": "Chaotic Chestplate",
   "item.draconicarmorrewrite.chaotic_leggings": "Chaotic Leggings",
-  "item.draconicarmorrewrite.chaotic_boots": "Chaotic Boots"
+  "item.draconicarmorrewrite.chaotic_boots": "Chaotic Boots",
+  "itemGroup.draconic_armor_tab": "Draconic Armor Rewrite"
 }
