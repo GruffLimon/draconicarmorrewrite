@@ -87,4 +87,12 @@ public class ClientSetup {
             );
         });
     }
+
+    public static void openUpgradableArmorConfig(net.minecraft.world.item.ItemStack stack) {
+        net.minecraft.world.entity.EquipmentSlot slot = net.minecraft.world.entity.EquipmentSlot.HEAD;
+        if (stack.getItem() instanceof com.draconicarmorrewrite.items.ClassicUpgradeableArmorItem armor) {
+            slot = armor.getEquipmentSlot();
+        }
+        net.minecraft.client.Minecraft.getInstance().setScreen(new com.draconicarmorrewrite.client.gui.ArmorConfigScreen(null, stack, slot));
+    }
 }

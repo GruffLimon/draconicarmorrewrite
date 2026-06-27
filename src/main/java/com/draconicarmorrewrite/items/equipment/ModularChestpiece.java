@@ -155,10 +155,10 @@ public class ModularChestpiece extends ArmorItem implements IModularArmor, IDEEq
     }
 
     @OnlyIn(Dist.CLIENT)
-    private ModularChestpieceModel<?> model;
+    private com.draconicarmorrewrite.client.model.ModularArmorModel<?> model;
 
     @OnlyIn(Dist.CLIENT)
-    private ModularChestpieceModel<?> model_on_armor;
+    private com.draconicarmorrewrite.client.model.ModularArmorModel<?> model_on_armor;
 
     @Override
     @OnlyIn(Dist.CLIENT)
@@ -166,10 +166,10 @@ public class ModularChestpiece extends ArmorItem implements IModularArmor, IDEEq
         ItemStack chest = entity.getItemBySlot(EquipmentSlot.CHEST);
         boolean onArmor = slot == null && !chest.isEmpty() && chest.getItem() instanceof ArmorItem;
         if (model == null || model_on_armor == null) {
-            model = new ModularChestpieceModel<>(techLevel, false);
-            model_on_armor = new ModularChestpieceModel<>(techLevel, true);
+            model = new com.draconicarmorrewrite.client.model.ModularArmorModel<>(techLevel, false, EquipmentSlot.CHEST);
+            model_on_armor = new com.draconicarmorrewrite.client.model.ModularArmorModel<>(techLevel, true, EquipmentSlot.CHEST);
         }
-        ModularChestpieceModel<?> activeModel = onArmor ? model_on_armor : model;
+        com.draconicarmorrewrite.client.model.ModularArmorModel<?> activeModel = onArmor ? model_on_armor : model;
         ForgeHooksClient.copyModelProperties(parentModel, activeModel);
         return activeModel;
     }

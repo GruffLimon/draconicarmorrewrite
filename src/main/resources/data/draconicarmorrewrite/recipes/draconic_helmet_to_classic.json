@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "draconicevolution:draconic_helmet" }
+  ],
+  "result": {
+    "item": "draconicarmorrewrite:draconic_helmet_classic"
+  }
+}

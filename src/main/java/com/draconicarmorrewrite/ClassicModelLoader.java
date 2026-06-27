@@ -23,25 +23,12 @@ public class ClassicModelLoader {
         }).orElse(null);
     }
 
-    private static final Map<ResourceLocation, RenderType> RENDER_TYPE_CACHE = new ConcurrentHashMap<>();
-
     public static RenderType getClassicArmorRenderType(ResourceLocation texture) {
-        return RENDER_TYPE_CACHE.computeIfAbsent(texture, tex -> RenderType.create(
-            "draconicarmorrewrite:classic_armor_" + tex.getPath().replace('/', '_').replace(':', '_'),
-            com.mojang.blaze3d.vertex.DefaultVertexFormat.NEW_ENTITY,
-            com.mojang.blaze3d.vertex.VertexFormat.Mode.TRIANGLES,
-            256,
-            true, // affectsOutline
-            false, // needsSorting
-            RenderType.CompositeState.builder()
-                .setShaderState(new net.minecraft.client.renderer.RenderStateShard.ShaderStateShard(net.minecraft.client.renderer.GameRenderer::getRendertypeEntityCutoutNoCullShader))
-                .setTextureState(new net.minecraft.client.renderer.RenderStateShard.TextureStateShard(tex, false, false))
-                .setTransparencyState(net.minecraft.client.renderer.RenderStateShard.NO_TRANSPARENCY)
-                .setLightmapState(net.minecraft.client.renderer.RenderStateShard.LIGHTMAP)
-                .setOverlayState(net.minecraft.client.renderer.RenderStateShard.OVERLAY)
-                .setCullState(net.minecraft.client.renderer.RenderStateShard.NO_CULL)
-                .createCompositeState(true) // depth write
-        ));
+        return RenderType.entityCutoutNoCull(texture);
+    }
+
+    public static RenderType getShieldRenderType(ResourceLocation texture) {
+        return RenderType.entityTranslucent(texture);
     }
 
     private static CCModel loadModel(ResourceLocation location) {
@@ -183,17 +170,23 @@ public class ClassicModelLoader {
             codechicken.lib.vec.Vertex5[] verts = ccModel.verts;
 
             if (verts != null) {
-                for (int i = 0; i < verts.length; i++) {
-                    codechicken.lib.vec.Vertex5 vert = verts[i];
-                    codechicken.lib.vec.Vector3 normal = (normals != null && i < normals.length && normals[i] != null) ? normals[i] : codechicken.lib.vec.Vector3.Y_POS;
+                int vp = ccModel.vp;
+                for (int i = 0; i < verts.length; i += vp) {
+                    for (int j = 0; j < 4; j++) {
+                        int index = i + Math.min(j, vp - 1);
+                        if (index < verts.length) {
+                            codechicken.lib.vec.Vertex5 vert = verts[index];
+                            codechicken.lib.vec.Vector3 normal = (normals != null && index < normals.length && normals[index] != null) ? normals[index] : codechicken.lib.vec.Vector3.Y_POS;
 
-                    builder.vertex(matrix, (float) vert.vec.x, (float) vert.vec.y, (float) vert.vec.z)
-                           .color(255, 255, 255, 255)
-                           .uv((float) vert.uv.u, (float) vert.uv.v)
-                           .overlayCoords(packedOverlay)
-                           .uv2(packedLight)
-                           .normal(normalMatrix, (float) normal.x, (float) normal.y, (float) normal.z)
-                           .endVertex();
+                            builder.vertex(matrix, (float) vert.vec.x, (float) vert.vec.y, (float) vert.vec.z)
+                                   .color(255, 255, 255, 255)
+                                   .uv((float) vert.uv.u, (float) vert.uv.v)
+                                   .overlayCoords(packedOverlay)
+                                   .uv2(packedLight)
+                                   .normal(normalMatrix, (float) normal.x, (float) normal.y, (float) normal.z)
+                                   .endVertex();
+                        }
+                    }
                 }
             }
         }

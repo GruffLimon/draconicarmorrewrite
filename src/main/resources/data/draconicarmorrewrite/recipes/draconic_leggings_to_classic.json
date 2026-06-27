@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "draconicevolution:draconic_leggings" }
+  ],
+  "result": {
+    "item": "draconicarmorrewrite:draconic_leggings_classic"
+  }
+}

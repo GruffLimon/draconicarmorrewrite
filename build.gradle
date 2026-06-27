@@ -94,3 +94,23 @@ tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
 
+tasks.register('inspectClass') {
+    doLast {
+        def urls = sourceSets.main.compileClasspath.collect { it.toURI().toURL() }
+        def loader = new URLClassLoader(urls as URL[], this.class.classLoader)
+        try {
+            def clazz = loader.loadClass("com.brandon3055.draconicevolution.client.model.ModularChestpieceModel")
+            println "CLASS LOADED SUCCESS"
+            println "SUPERCLASS: ${clazz.superclass.name}"
+            for (def f : clazz.getDeclaredFields()) {
+                println "FIELD: ${f.name} - ${f.type.name}"
+            }
+            for (def m : clazz.getDeclaredMethods()) {
+                println "METHOD: ${m.name} - ${m.returnType.name} - ${m.parameterTypes*.name}"
+            }
+        } catch (Exception e) {
+            e.printStackTrace()
+        }
+    }
+}
+

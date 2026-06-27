@@ -37,10 +37,16 @@ implements EquippedItemModel {
 
     @Override
     public void render(LivingEntity entity, PoseStack poseStack, MultiBufferSource buffers, ItemStack stack, int packedLight, int packedOverlay, float partialTicks) {
+        if (stack.getItem() instanceof com.draconicarmorrewrite.items.ClassicUpgradeableArmorItem armor && armor.isArmorHidden(stack)) {
+            return;
+        }
+
         if (entity instanceof net.minecraft.world.entity.decoration.ArmorStand) {
             this.head.visible = true;
             this.hat.visible = true;
             this.body.visible = true;
+            this.rightArm.visible = true;
+            this.leftArm.visible = true;
             this.leftLeg.visible = true;
             this.rightLeg.visible = true;
         }
@@ -49,6 +55,10 @@ implements EquippedItemModel {
 
         if (slot == EquipmentSlot.HEAD) {
             ClassicModelLoader.renderClassicPart(poseStack, buffers, tech, "helmet", isOnArmor, this.head, packedLight, packedOverlay);
+        } else if (slot == EquipmentSlot.CHEST) {
+            ClassicModelLoader.renderClassicPart(poseStack, buffers, tech, "body", isOnArmor, this.body, packedLight, packedOverlay);
+            ClassicModelLoader.renderClassicPart(poseStack, buffers, tech, "right_arm", isOnArmor, this.rightArm, packedLight, packedOverlay);
+            ClassicModelLoader.renderClassicPart(poseStack, buffers, tech, "left_arm", isOnArmor, this.leftArm, packedLight, packedOverlay);
         } else if (slot == EquipmentSlot.LEGS) {
             ClassicModelLoader.renderClassicPart(poseStack, buffers, tech, "belt", isOnArmor, this.body, packedLight, packedOverlay);
             ClassicModelLoader.renderClassicPart(poseStack, buffers, tech, "left_leg", isOnArmor, this.leftLeg, packedLight, packedOverlay);

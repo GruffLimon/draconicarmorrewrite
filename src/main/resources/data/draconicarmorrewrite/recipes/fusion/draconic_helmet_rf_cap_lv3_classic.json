@@ -1,0 +1,39 @@
+{
+  "type": "draconicarmorrewrite:classic_fusion_upgrade",
+  "catalyst": {
+    "item": "draconicarmorrewrite:draconic_helmet_classic"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:nether_star"
+    },
+    {
+      "item": "minecraft:nether_star"
+    },
+    {
+      "item": "draconicevolution:wyvern_core"
+    },
+    {
+      "item": "draconicevolution:wyvern_core"
+    },
+    {
+      "item": "minecraft:emerald_block"
+    },
+    {
+      "item": "minecraft:emerald_block"
+    },
+    {
+      "item": "draconicevolution:awakened_core"
+    },
+    {
+      "item": "draconicarmorrewrite:rf_cap_core"
+    }
+  ],
+  "result": {
+    "item": "draconicarmorrewrite:draconic_helmet_classic"
+  },
+  "tier": "DRACONIC",
+  "total_energy": 256000000,
+  "upgrade": "rfCap",
+  "upgrade_level": 3
+}

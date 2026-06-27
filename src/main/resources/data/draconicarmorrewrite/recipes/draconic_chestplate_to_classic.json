@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "draconicevolution:draconic_chestpiece" }
+  ],
+  "result": {
+    "item": "draconicarmorrewrite:draconic_chestplate_classic"
+  }
+}

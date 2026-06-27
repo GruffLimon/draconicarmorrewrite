@@ -1,0 +1,39 @@
+{
+  "type": "draconicarmorrewrite:classic_fusion_upgrade",
+  "catalyst": {
+    "item": "draconicarmorrewrite:draconic_leggings_classic"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:nether_star"
+    },
+    {
+      "item": "minecraft:nether_star"
+    },
+    {
+      "item": "draconicevolution:draconium_core"
+    },
+    {
+      "item": "draconicevolution:draconium_core"
+    },
+    {
+      "item": "minecraft:emerald"
+    },
+    {
+      "item": "minecraft:emerald"
+    },
+    {
+      "item": "draconicevolution:wyvern_core"
+    },
+    {
+      "item": "draconicarmorrewrite:shield_rec_core"
+    }
+  ],
+  "result": {
+    "item": "draconicarmorrewrite:draconic_leggings_classic"
+  },
+  "tier": "WYVERN",
+  "total_energy": 4096000,
+  "upgrade": "shieldRec",
+  "upgrade_level": 2
+}

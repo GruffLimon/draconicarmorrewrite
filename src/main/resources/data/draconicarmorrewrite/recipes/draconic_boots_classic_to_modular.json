@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "draconicarmorrewrite:draconic_boots_classic" }
+  ],
+  "result": {
+    "item": "draconicevolution:draconic_boots"
+  }
+}

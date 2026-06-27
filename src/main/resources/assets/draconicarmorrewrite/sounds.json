@@ -1,0 +1,12 @@
+{
+  "shield_strike": {
+    "category": "player",
+    "subtitle": "subtitles.draconicarmorrewrite.shield_strike",
+    "sounds": [
+      {
+        "name": "draconicarmorrewrite:shield_strike",
+        "stream": false
+      }
+    ]
+  }
+}

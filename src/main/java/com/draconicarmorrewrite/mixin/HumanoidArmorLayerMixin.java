@@ -43,8 +43,11 @@ public class HumanoidArmorLayerMixin {
         ItemStack stack = entity.getItemBySlot(slot);
         if (stack.isEmpty()) return;
         if (stack.getItem() instanceof IModularArmor) {
-            // Cancel vanilla flat box rendering — the 3D model handles it
-            ci.cancel();
+            net.minecraft.resources.ResourceLocation rl = net.minecraftforge.registries.ForgeRegistries.ITEMS.getKey(stack.getItem());
+            if (rl != null && rl.getNamespace().equals("draconicarmorrewrite")) {
+                // Cancel vanilla flat box rendering — the 3D model handles it
+                ci.cancel();
+            }
         }
     }
 }

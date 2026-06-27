@@ -24,6 +24,9 @@ public class ArmorAttributeEventHandler {
     public static void onItemAttributeModifier(ItemAttributeModifierEvent event) {
         ItemStack stack = event.getItemStack();
         if (stack.getItem() instanceof IModularArmor) {
+            if (!net.minecraftforge.registries.ForgeRegistries.ITEMS.getKey(stack.getItem()).getNamespace().equals("draconicarmorrewrite")) {
+                return;
+            }
             ArmorItem self = (ArmorItem) stack.getItem();
             if (event.getSlotType() == self.getEquipmentSlot()) {
                 int armorValue = switch (self.getType()) {

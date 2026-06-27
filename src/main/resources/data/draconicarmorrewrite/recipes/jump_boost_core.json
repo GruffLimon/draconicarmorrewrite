@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " G ",
+    "GXG",
+    " G "
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "X": {
+      "item": "minecraft:slime_block"
+    }
+  },
+  "result": {
+    "item": "draconicarmorrewrite:jump_boost_core",
+    "count": 1
+  }
+}

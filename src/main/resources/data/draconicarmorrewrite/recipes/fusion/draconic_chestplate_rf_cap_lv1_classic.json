@@ -1,0 +1,39 @@
+{
+  "type": "draconicarmorrewrite:classic_fusion_upgrade",
+  "catalyst": {
+    "item": "draconicarmorrewrite:draconic_chestplate_classic"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:golden_apple"
+    },
+    {
+      "item": "minecraft:golden_apple"
+    },
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "minecraft:ender_eye"
+    },
+    {
+      "item": "minecraft:ender_eye"
+    },
+    {
+      "item": "draconicevolution:draconium_core"
+    },
+    {
+      "item": "draconicarmorrewrite:rf_cap_core"
+    }
+  ],
+  "result": {
+    "item": "draconicarmorrewrite:draconic_chestplate_classic"
+  },
+  "tier": "DRACONIC",
+  "total_energy": 256000,
+  "upgrade": "rfCap",
+  "upgrade_level": 1
+}

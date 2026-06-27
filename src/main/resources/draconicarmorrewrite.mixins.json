@@ -5,13 +5,11 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "draconicarmorrewrite.mixins.refmap.json",
   "mixins": [
-    "ModularChestpieceModelMixin",
     "HumanoidArmorLayerMixin",
     "ModularArmorNameFixMixin",
     "ItemNameMixin",
     "ShieldControlEntityMixin",
-    "ModularArmorEventHandlerMixin",
-    "ShieldHudElementMixin"
+    "LivingEntityAccessor"
   ],
   "client": [
   ],

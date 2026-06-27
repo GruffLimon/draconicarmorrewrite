@@ -1,0 +1,36 @@
+{
+  "type": "draconicarmorrewrite:classic_fusion_upgrade",
+  "catalyst": {
+    "item": "draconicarmorrewrite:chaotic_leggings_classic"
+  },
+  "ingredients": [
+    {
+      "item": "draconicarmorrewrite:shield_cap_core"
+    },
+    {
+      "item": "draconicevolution:chaotic_core"
+    },
+    {
+      "item": "draconicevolution:chaotic_core"
+    },
+    {
+      "item": "draconicevolution:awakened_core"
+    },
+    {
+      "item": "draconicevolution:awakened_core"
+    },
+    {
+      "item": "minecraft:nether_star"
+    },
+    {
+      "item": "minecraft:nether_star"
+    }
+  ],
+  "result": {
+    "item": "draconicarmorrewrite:chaotic_leggings_classic"
+  },
+  "tier": "CHAOTIC",
+  "total_energy": 200000000,
+  "upgrade": "shieldCap",
+  "upgrade_level": 3
+}

@@ -1,0 +1,27 @@
+{
+  "type": "draconicarmorrewrite:classic_fusion_upgrade",
+  "catalyst": {
+    "item": "draconicarmorrewrite:chaotic_helmet_classic"
+  },
+  "ingredients": [
+    {
+      "item": "draconicarmorrewrite:shield_rec_core"
+    },
+    {
+      "item": "draconicevolution:chaotic_core"
+    },
+    {
+      "item": "minecraft:nether_star"
+    },
+    {
+      "item": "minecraft:nether_star"
+    }
+  ],
+  "result": {
+    "item": "draconicarmorrewrite:chaotic_helmet_classic"
+  },
+  "tier": "CHAOTIC",
+  "total_energy": 50000000,
+  "upgrade": "shieldRec",
+  "upgrade_level": 1
+}
